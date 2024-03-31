@@ -10,7 +10,7 @@ export default function Work({ work}: Props){
     <Card key={work.company}>
       <CardHeader>
         <div className="flex items-center justify-between gap-x-2 text-base">
-          <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
+          <h3 className="inline-flex items-center justify-center gap-x-2 font-semibold leading-none">
             <work.logo className="size-7" />
             <a className="hover:underline" href={work.link} target="_blank">
               {work.company}
@@ -27,7 +27,7 @@ export default function Work({ work}: Props){
                         ))}
                       </span>
           </h3>
-          <div className="text-sm tabular-nums text-gray-500">
+          <div className="text-sm tabular-nums text-gray-100">
             {work.start} - {work.end}
           </div>
         </div>
@@ -36,7 +36,7 @@ export default function Work({ work}: Props){
           {work.title}
         </h4>
       </CardHeader>
-      <CardContent className="mt-2 text-xs">
+      <CardContent className="mt-2 text-sm">
         {work.description}
         <div className="mt-2">
           <ul className="list-disc">
@@ -51,7 +51,7 @@ export default function Work({ work}: Props){
                     <span className="inline-flex gap-x-1">
                         {work.technologies.map((badge: string) => (
                           <Badge
-                            variant="indigo"
+                            variant="outline"
                             className="align-middle text-xs"
                             key={badge}
                           >

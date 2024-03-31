@@ -20,7 +20,7 @@ export function ProjectCard({ title, description, tags, link, project }: Props) 
     <Card className="flex flex-col overflow-hidden border border-muted p-3">
       <CardHeader className="">
         <div className="space-y-1">
-          <div className="inline-flex items-start">
+          <div className="inline-flex items-start gap-2">
             <project.logo className="size-7" />
             <CardTitle className="text-base">
               {link ? (

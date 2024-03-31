@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 pb-16 print:p-12 bg-cyan-950">
+      <section className="mx-auto w-full max-w-2xl space-y-8 print:space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
@@ -110,10 +110,7 @@ export default function Page() {
           {RESUME_DATA.work.map((work) => {
             if (!work.hidden)
               return (
-                <Work work={work}
-                      badges={work.badges}
-                      achievements={work.achievements}
-                      technologies={work.technologies}/>
+                <Work work={work}/>
               );
           })}
           <details>
@@ -122,10 +119,7 @@ export default function Page() {
               {RESUME_DATA.work.map((work) => {
                 if (work.hidden)
                   return (
-                    <Work work={work}
-                          badges={work.badges}
-                          achievements={work.achievements}
-                          technologies={work.technologies}/>
+                    <Work work={work}/>
                   );
               })}
             </div>
@@ -138,11 +132,11 @@ export default function Page() {
               <Card key={education.school}>
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-base">
-                    <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
+                    <h3 className="inline-flex items-center justify-center gap-x-2 font-semibold leading-none">
                       <education.logo className="size-7" />
                       {education.school}
                     </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
+                    <div className="text-sm tabular-nums text-gray-100">
                       {education.start} - {education.end}
                     </div>
                   </div>
