@@ -9,7 +9,7 @@ export default function Work({ work}: Props){
   return (
     <Card key={work.company}>
       <CardHeader>
-        <div className="flex items-center justify-between gap-x-2 text-base">
+        <div className="flex items-center justify-between gap-x-2 text-base" key={work.company}>
           <h3 className="inline-flex items-center justify-center gap-x-2 font-semibold leading-none">
             <work.logo className="size-7" />
             <a className="hover:underline" href={work.link} target="_blank">
