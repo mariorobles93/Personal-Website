@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { CommandMenu } from "@/components/command-menu";
 import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
-import { MapPin, MailIcon, PhoneIcon } from "lucide-react";
+import { MapPin, MailIcon, PhoneIcon, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 pb-16 print:p-12 bg-cyan-950">
+    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 bg-cyan-950">
       <section className="mx-auto w-full max-w-2xl space-y-8 print:space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
@@ -94,7 +94,40 @@ export default function Page() {
           </Avatar>
         </div>
         <Section>
-          <h2 className="text-xl font-bold">About</h2>
+          <div className="inline-flex gap-x-2">
+            <h2 className="text-xl font-bold">About</h2>
+            {RESUME_DATA.resumePdfUrl ? (
+              <Button
+                className="size-8 text-sm font-mono"
+                variant="outline"
+                size="xl"
+                asChild
+              >
+                <a href={RESUME_DATA.resumePdfUrl} target="_blank">
+                  <div className="pe-2">
+                    <FileText className="size-4" />
+                  </div>
+                  <p>Resume</p>
+                </a>
+              </Button>
+            ) : null}
+            {RESUME_DATA.coverLetterPdfUrl ? (
+              <Button
+                className="size-8 text-sm font-mono"
+                variant="outline"
+                size="xw"
+                asChild
+              >
+                <a href={RESUME_DATA.coverLetterPdfUrl} target="_blank">
+                  <div className="pe-2">
+                    <FileText className="size-4" />
+                  </div>
+                  <p>Cover Letter</p>
+                </a>
+              </Button>
+            ) : null}
+          </div>
+
           <p className="text-pretty font-mono text-sm text-muted-foreground">
             {RESUME_DATA.summary}
           </p>
@@ -155,7 +188,8 @@ export default function Page() {
                   key={project.title}
                   title={project.title}
                   description={project.description}
-                  tags={project.techStack}
+                  tags={project.tags}
+                  techStack={project.techStack}
                   project={project}
                   link={"link" in project ? project.link.href : undefined}
                 />
@@ -168,8 +202,12 @@ export default function Page() {
       <CommandMenu
         links={[
           {
-            url: RESUME_DATA.personalWebsiteUrl,
-            title: "Personal Website",
+            url: RESUME_DATA.resumePdfUrl,
+            title: "Resume",
+          },
+          {
+            url: RESUME_DATA.coverLetterPdfUrl,
+            title: "Cover Letter",
           },
           ...RESUME_DATA.contact.social.map((socialMediaLink) => ({
             url: socialMediaLink.url,
