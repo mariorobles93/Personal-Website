@@ -3,6 +3,7 @@ import { SailPointLogo } from "@/components/logos/SailpointLogo";
 import { SeekOpsLogo } from "@/components/logos/SeekOpsLogo";
 import { GeneralMotorsLogo } from "@/components/logos/General Motors";
 import { UTEPLogo } from "@/components/logos/UTEPLogo";
+import { EmptyLogo } from "@/components/logos/EmptyLogo";
 
 export const RESUME_DATA = {
   name: "Mario Robles",
@@ -148,7 +149,6 @@ export const RESUME_DATA = {
       title: "SailPoint Forms Documentation",
       techStack: [
         "Proprietary",
-        "1st Party",
         "Angular",
         "Storybook",
         "Jest",
@@ -164,7 +164,6 @@ export const RESUME_DATA = {
       title: "SailPoint Angular Components (Armada)",
       techStack: [
         "Proprietary",
-        "1st Party",
         "Angular",
         "Storybook",
         "Jest",
@@ -175,6 +174,33 @@ export const RESUME_DATA = {
         label: "Sailpoint UI Component Library Documentation",
         href: "https://documentation.sailpoint.com/identityiq/help/plugins/angularcomponents.html",
       },
+    },
+    {
+      title: "SeekOps Dashboard",
+      techStack: [
+        "Proprietary",
+        "React",
+        "Typescript",
+        "Testing Library",
+        "Material UI",
+        "Redux"
+      ],
+      description: "SeekOps Proprietary Emissions Dashboard, Data ingestion, Emissions Report Generation",
+      logo: SeekOpsLogo,
+      link: {
+        label: "SeekOps Dashboard",
+        href: "https://soda.seekops.com/",
+      },
+    },
+    {
+      title: "Ross Optical Calculator",
+      techStack: [
+        "Angular",
+        "Ionic",
+        "Typescript"
+      ],
+      description: "Allows potential clients to calculate requirements. Effective Focal Length, F#, Centration, Aspheric Surface ",
+      logo: EmptyLogo
     },
   ],
 } as const;
