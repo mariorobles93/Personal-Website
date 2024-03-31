@@ -35,18 +35,11 @@ export const CommandMenu = ({ links }: Props) => {
 
   return (
     <>
-      <p className="fixed bottom-0 left-0 right-0 hidden border-t bg-secondary border-t-muted p-1 text-center text-base text-primary-foreground print:hidden xl:block">
-        Press{" "}
-        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-secondary-foreground px-1.5 font-mono text-[10px] font-medium opacity-100">
-          <span className="text-base">⌘</span>J
-        </kbd>{" "}
-        to open the command menu
-      </p>
       <Button
         onClick={() => setOpen((open) => !open)}
         variant="outline"
         size="icon"
-        className="fixed bottom-4 right-4 flex rounded-full shadow-2xl print:hidden xl:hidden"
+        className="fixed bottom-4 right-4 flex rounded-full shadow-2xl print:hidden bg-primary text-primary-foreground hover:bg-secondary hover:text-secondary-foreground"
       >
         <CommandIcon className="my-6 size-6" />
       </Button>
@@ -54,16 +47,6 @@ export const CommandMenu = ({ links }: Props) => {
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Actions">
-            <CommandItem
-              onSelect={() => {
-                setOpen(false);
-                window.print();
-              }}
-            >
-              <span>Print</span>
-            </CommandItem>
-          </CommandGroup>
           <CommandGroup heading="Links">
             {links.map(({ url, title }) => (
               <CommandItem

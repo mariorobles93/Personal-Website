@@ -6,21 +6,23 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { ExternalLink } from "lucide-react";
 
 interface Props {
   title: string;
   description: string;
+  techStack: readonly string[];
   tags: readonly string[];
   link?: string;
   project: any;
 }
 
-export function ProjectCard({ title, description, tags, link, project }: Props) {
+export function ProjectCard({ title, description, tags, techStack, link, project }: Props) {
   return (
     <Card className="flex flex-col overflow-hidden border border-muted p-3">
       <CardHeader className="">
         <div className="space-y-1">
-          <div className="inline-flex items-start gap-2">
+          <div className="inline-flex items-center gap-2">
             <project.logo className="size-7" />
             <CardTitle className="text-base">
               {link ? (
@@ -30,7 +32,7 @@ export function ProjectCard({ title, description, tags, link, project }: Props) 
                   className="inline-flex items-center gap-1 hover:underline"
                 >
                   {title}{" "}
-                  <span className="size-1 rounded-full bg-green-500"></span>
+                  <ExternalLink/>
                 </a>
               ) : (
                 title
@@ -48,6 +50,19 @@ export function ProjectCard({ title, description, tags, link, project }: Props) 
       <CardContent className="mt-auto flex">
         <div className="mt-2 flex flex-wrap gap-1">
           {tags.map((tag) => (
+            <Badge
+              className="px-1 py-0 text-[10px]"
+              variant="destructive"
+              key={tag}
+            >
+              {tag}
+            </Badge>
+          ))}
+        </div>
+      </CardContent>
+      <CardContent className="mt-auto flex">
+        <div className="mt-2 flex flex-wrap gap-1">
+          {techStack.map((tag) => (
             <Badge
               className="px-1 py-0 text-[10px]"
               variant="secondary"
