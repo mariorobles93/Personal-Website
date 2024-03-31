@@ -16,6 +16,8 @@ export const RESUME_DATA = {
     "Creative self-starter with well-rounded front and backend experience, full mastery over the fundamentals of computer science, and a passion for continually learning new concepts, methods, and technologies. Known for expert verbal and written communication skills and the ability to build trusted relationships within diverse groups of clients, teams, executives, and subject matter experts",
   avatarUrl: "/MarioRoblesProfile.png",
   personalWebsiteUrl: "https://mariorobles.tech",
+  resumePdfUrl: "/MarioRoblesResume.pdf",
+  coverLetterPdfUrl: "/MarioRobles_CoverLetter.pdf",
   contact: {
     email: "dev@mariorobles.tech",
     tel: "+19152024560",
@@ -146,14 +148,34 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
-      title: "SailPoint Forms Documentation",
+      title: "Personal Website",
+      tags:[
+        "Side Project",
+        "Forked"
+      ],
       techStack: [
-        "Proprietary",
+        "Next.js",
+        "Tailwind CSS",
+        "Lucide React"
+      ],
+      description: "A project to display my professional experience.",
+      logo: GitHubIcon,
+      link: {
+        label: "Github Repository",
+        href: "https://github.com/mariorobles93/Personal-Website",
+      },
+    },
+    {
+      title: "SailPoint Forms Documentation",
+      tags:[
+        "Proprietary"
+      ],
+      techStack: [
         "Angular",
         "Storybook",
         "Jest",
       ],
-      description: "Create forms integrated with SailPoint Identity",
+      description: "Create forms integrated with SailPoint IdentityNow",
       logo: SailPointLogo,
       link: {
         label: "SailPoint Forms Documentation",
@@ -162,13 +184,15 @@ export const RESUME_DATA = {
     },
     {
       title: "SailPoint Angular Components (Armada)",
+      tags:[
+        "Proprietary"
+      ],
       techStack: [
-        "Proprietary",
         "Angular",
         "Storybook",
         "Jest",
       ],
-      description: "1st Party Angular UI Component library",
+      description: "1st Party Angular UI Component library, Documented, Automated Testing",
       logo: SailPointLogo,
       link: {
         label: "Sailpoint UI Component Library Documentation",
@@ -177,8 +201,10 @@ export const RESUME_DATA = {
     },
     {
       title: "SeekOps Dashboard",
+      tags:[
+        "Proprietary"
+      ],
       techStack: [
-        "Proprietary",
         "React",
         "Typescript",
         "Testing Library",
@@ -194,6 +220,7 @@ export const RESUME_DATA = {
     },
     {
       title: "Ross Optical Calculator",
+      tags:[],
       techStack: [
         "Angular",
         "Ionic",
