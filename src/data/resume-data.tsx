@@ -158,7 +158,7 @@ export const RESUME_DATA = {
         "Tailwind CSS",
         "Lucide React"
       ],
-      description: "A project to display my professional experience.",
+      description: "A project to display my professional experience. Original Template: @BartoszJarocki/cv",
       logo: GitHubIcon,
       link: {
         label: "Github Repository",
@@ -175,7 +175,7 @@ export const RESUME_DATA = {
         "Storybook",
         "Jest",
       ],
-      description: "Create forms integrated with SailPoint IdentityNow",
+      description: "Utilize sections and fields to organize forms logically. Conditional configurations adapt form elements based on user input. Form inputs integrate external data sources.",
       logo: SailPointLogo,
       link: {
         label: "SailPoint Forms Documentation",
@@ -217,6 +217,18 @@ export const RESUME_DATA = {
         label: "SeekOps Dashboard",
         href: "https://soda.seekops.com/",
       },
+    },
+    {
+      title: "Shuttle Dashboard",
+      tags:[
+        "Proprietary"
+      ],
+      techStack: [
+        "Angular",
+        "Typescript"
+      ],
+      description: "Administrative dashboard facilitates vehicle, route, passenger, and stop management tasks.",
+      logo: GeneralMotorsLogo,
     },
     {
       title: "Ross Optical Calculator",
