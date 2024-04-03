@@ -231,6 +231,18 @@ export const RESUME_DATA = {
       logo: GeneralMotorsLogo,
     },
     {
+      title: "Shuttle Kiosk",
+      tags:[
+        "Proprietary"
+      ],
+      techStack: [
+        "Angular",
+        "Typescript"
+      ],
+      description: "Touch screen optimized, scalable app, allows guest to request shuttle",
+      logo: GeneralMotorsLogo,
+    },
+    {
       title: "Ross Optical Calculator",
       tags:[],
       techStack: [
